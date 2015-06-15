@@ -1,0 +1,37 @@
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+div {
+	border-style: solid;
+}
+
+#game-container{
+	width: 1200px;
+	margin: auto;
+	height: 600px;
+}
+
+#mole-container {
+	position: relative;
+	width: 1200px;
+	height: 375px;
+}
+
+.one-third,{
+	margin: auto;
+}
+
+.flash-mole {
+	display: inline;
+}
+
+#mole {
+	position: absolute;
+	width: 5%;
+	left: 0%;
+	top: 0%;
+}

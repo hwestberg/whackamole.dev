@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Whackamole</title>
+	<link rel="stylesheet" type="text/css" href="grids.css">
+	<link rel="stylesheet" type="text/css" href="whackamole.css">
+</head>
+<body>		
+	<div id="game-container">
+		<div id="game-title" class="row">	
+				<h1>Whack-A-Tom</h1>
+		</div>
+		<div id="" class="row">		
+			<div class="column one-third">
+				<p id="timer-counter">Timer: 00:45:00</p>
+			</div>
+			<div class="column one-third">
+				<p id="point-counter">Points: 0</p>
+			</div>
+			
+			<div class="column one-third">
+				<p id="high-score-counter">High Score: 0</p>
+			</div>	
+		</div>
+		<div class="row">
+			<button id="start-button">Let the Whacking Begin!</button>
+		</div>
+		<div id="mole-container">
+			<img src="/tom.jpg" id="mole">
+		</div>		
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script type="text/javascript" src="whackamole.js"></script>
+</body>
+</html>
