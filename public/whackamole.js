@@ -9,6 +9,9 @@
 		points:  0,
 		timer: 30,
 		isPlaying: false,
+		moleImage: ["/tom-bag.png", "/tom-suit.png", 
+					"/tom-quizzical.png", "/tom-hawaii.png",
+					"/tom-red-suit.png", ],
 		highScore: localStorage.getItem("highScore") || 0,
 		getHighScore: function(){
 			console.log("points are" + game.points);
@@ -23,15 +26,28 @@
 
 		gameInit : function(){
 			$("#start-button").click(this.startGame);
+			game.catchClick();
 		},
+
 		startGame: function() {
 			game.hideMole();
 			game.moleMadness();
 			game.updateTimer();
 			game.isPlaying = true;
-			game.catchClick();
 			console.log(game.isPlaying);
 		},
+		
+		selectMolePicture: function (){
+			return Math.floor((Math.random()* 4) + 0);
+		},
+
+		changeMolePicture: function (){
+			console.log("new pic! at index" + game.selectMolePicture());
+			$(game.mole).attr("src", game.moleImage[game.selectMolePicture()]);
+			console.log("changing picture");
+			
+		},
+
 		showMoleInterval : function(){
 			return Math.floor((Math.random() * 3000) + 1500);
 		},
@@ -60,11 +76,13 @@
 				$(game.mole).show();
 				console.log("mole is visible")
 			}, game.flashMoleTimeout())},
+		
 		moleMadness : function(){
 			this.movingMole = setInterval(function(){
 			game.moveMole();
 			game.showMole();
-			game.hideMole();	
+			game.hideMole();
+			game.changeMolePicture();	
 			}, game.showMoleInterval());	
 		},
 		catchClick: function() {
@@ -101,10 +119,11 @@
 			alert("Final Score: " + game.points);
 			game.isPlaying = false;		
 			game.points = 0;
-			console.log("point reset to " + game.points);
+			console.log("points reset to " + game.points);
+			$(game.pointCounter).html("Points: " + game.points);
 			game.timer = 45;
-			console.log("timere reset to " + game.timer);
-	
+			console.log("timer reset to " + game.timer);
+			$(game.timerCounter).html("Timer: 00:" + game.timer + ":00");
 		}
 	};
 	game.gameInit();
