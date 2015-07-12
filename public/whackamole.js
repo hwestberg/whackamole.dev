@@ -2,6 +2,8 @@
 "use strict"
 	var game = {
 		mole : $("#mole"),
+		container : $("#mole-container"),
+		sprayAudio: $("#spray"),
 		highScoreCounter : $("#high-score-counter"),
 		pointCounter : $("#point-counter"),
 		timerCounter: $("#timer-counter"),
@@ -11,7 +13,7 @@
 		isPlaying: false,
 		moleImage: ["/tom-bag.png", "/tom-suit.png", 
 					"/tom-quizzical.png", "/tom-hawaii.png",
-					"/tom-red-suit.png", ],
+					"/tom-red-suit.png", "/tom-crouched.png", "tom-serious.png"],
 		highScore: localStorage.getItem("highScore") || 0,
 		getHighScore: function(){
 			console.log("points are" + game.points);
@@ -38,7 +40,7 @@
 		},
 		
 		selectMolePicture: function (){
-			return Math.floor((Math.random()* 4) + 0);
+			return Math.floor((Math.random()* 6) + 0);
 		},
 
 		changeMolePicture: function (){
@@ -58,7 +60,7 @@
 			return Math.floor(Math.random() * (90) + 0);
 		},
 		moveMoleY : function(){
-			return Math.floor(Math.random() * (70) + 0);
+			return Math.floor(Math.random() * (25) + 2);
 			console.log(moveMoleY);
 		},			
 		hideMole : function(){
@@ -94,6 +96,14 @@
 				}
 			});
 		},
+
+		playSpray: function(){
+			$(game.container).click(function(){
+				game.sprayAudio.get(0).play();
+			})
+			
+		},
+		
 		updateTimer: function(){
 			this.changingTimer = setInterval(function(){
 				if (game.timer > 0) {
@@ -128,5 +138,6 @@
 	};
 	game.gameInit();
 	game.getHighScore();
+	game.playSpray();
 
 })();

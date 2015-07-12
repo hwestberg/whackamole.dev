@@ -1,5 +1,11 @@
 html {
     box-sizing: border-box;
+
+}
+
+html, body {
+	height: 100%;
+	border-style: solid;
 }
 *, *:before, *:after {
     box-sizing: inherit;
@@ -10,15 +16,20 @@ div {
 }
 
 #game-container{
-	width: 1200px;
+	width: 95%;
 	margin: auto;
-	height: 600px;
+	height: 60%;
+	background: url(/store.jpg) no-repeat;
+	background-size: 100%;
+	border-style: solid;
+
 }
 
 #mole-container {
 	position: relative;
-	width: 1200px;
-	height: 375px;
+	width: 95%;
+	height: 100%;
+	cursor: url(/tomm-fresh.png), auto;
 }
 
 .one-third,{
@@ -33,5 +44,5 @@ div {
 	position: absolute;
 	width: 9%;
 	left: 0%;
-	top: 0%;
+	bottom: 0%;
 }
