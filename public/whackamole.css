@@ -1,48 +1,78 @@
 html {
     box-sizing: border-box;
-
+    font-size: 62.5%;
 }
 
 html, body {
 	height: 100%;
-	border-style: solid;
+	font-size: 1rem;
 }
 *, *:before, *:after {
     box-sizing: inherit;
 }
 
-div {
-	border-style: solid;
+body {
+	cursor: url(/tomm-fresh.png), auto;
 }
 
-#game-container{
-	width: 95%;
-	margin: auto;
-	height: 60%;
-	background: url(/store.jpg) no-repeat;
-	background-size: 100%;
-	border-style: solid;
+#dashboard {
+	padding: 0%;
+	height: 100%;
+}
 
+.dash-item {
+	padding: 5%;
+	font-family: 'Libre Baskerville', serif;
+	color: #1A237E;
+	height: 20%;
+	
+}
+
+button, #timer-counter, #point-counter, #high-score-counter{
+border-top: solid 1px #1A237E;
+}
+
+
+#game-container {
+	width: 95%;
+	border: solid 4px #1A237E;
+	border-radius: 10px;
+	margin: auto;
+	margin-top: 5%;
 }
 
 #mole-container {
 	position: relative;
-	width: 95%;
-	height: 100%;
-	cursor: url(/tomm-fresh.png), auto;
+	border-right: solid 4px #1A237E;
+	padding: 0%;
 }
 
-.one-third,{
-	margin: auto;
-}
 
 .flash-mole {
 	display: inline;
 }
 
+button {
+	border: solid #1A237E;
+	text-decoration: none;
+	font-family: 'Libre Baskerville', serif;
+	background-color: #1A237E;
+	color: white;
+	margin: 2%;
+	padding:2%;
+	border-radius: 4px;
+	font-size: 1rem;
+}
+
 #mole {
 	position: absolute;
-	width: 9%;
+	width: 11%;
 	left: 0%;
-	bottom: 0%;
+	top: 55%;
+	z-index: 10;
+}
+
+#store {
+	width: 100%;
+	
 }

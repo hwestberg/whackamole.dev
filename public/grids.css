@@ -31,9 +31,15 @@
 .column.one-fourth {
 	width: 25%;
 }
-
+.column.three-fourths {
+	width: 75%;
+}
 .column.one-sixth {
 	width: 16.66666%;
+}
+
+.column.five-sixths {
+	width: 83.333333333%;
 }
 
 .column.one-eighth {
